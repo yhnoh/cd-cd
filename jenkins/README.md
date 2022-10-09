@@ -3,6 +3,7 @@
 - [jenkins-docker-hub](https://hub.docker.com/r/jenkins/jenkins)
 - [jenkins-docker-github](https://github.com/jenkinsci/docker)
 
+
 ### jenkins docker
 ---
 
@@ -16,3 +17,5 @@
     ```bash
     docker exec -it jenkins-server bash
     ```
+
+> [Jenkins(젠킨스) | Gradle, Jar 빌드&배포하기)](https://kitty-geno.tistory.com/91)
