@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  jenkins-service: 
+    image: 'jenkins/jenkins:lts-jdk11'
+    container_name: jenkins-service
+    ports:
+      - 8082:8080
+      - 50000:50000
+    restart: on-failure
+    volumes:
+      - './jenkins_home:/var/jenkins_home'
