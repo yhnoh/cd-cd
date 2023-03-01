@@ -61,7 +61,7 @@ ansible의 에이전트들에게 전달
 
   - name: push the image on Docker hub
     command: docker push tedgom19/spring-server
-    
+
   - name: remove the docker image from the ansible server
     command: docker rmi tedgom19/spring-server
     ignore_errors: yes
@@ -77,3 +77,20 @@ ansible의 에이전트들에게 전달
 
   - name: create a container using spring-server image
     command: docker run -d --name spring-server -p 8080:8080 spring-server
+
+
+
+jenkins 파이프라인을 통해서 순차적인 job을 실행시킬 수 있다.
+(groovy + DSL)
+
+jenkins 파이프라인 syntax를 이용해 외부 스크립트를 작동 시킬 수 있다.
+git repository 에서 파일을 가져와 작업을 진행할 수 있다.
+
+#### Jenkins Master + Salve
+
+Jenkins Master의 요청 처리를 Slave가 진행한다.
+Master로 부터 전달된 Job 실행
+Jenkins 프로젝트 생성 시 특정 Slave를 선택 또는 리소스가 충분한 Slave에게 자동으로 할당 가능
+Slave에도 jvm이 있어야 가능하다.
+
+https://pompitzz.github.io/blog/Java/awsEc2InstallJDK11.html#jdk-%E1%84%89%E1%85%A5%E1%86%AF%E1%84%8E%E1%85%B5

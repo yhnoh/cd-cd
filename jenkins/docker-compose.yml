@@ -10,3 +10,10 @@ services:
     restart: on-failure
     volumes:
       - './jenkins_home:/var/jenkins_home'
+networks:
+  default:
+    external: 
+      name: bridge
+#     external:
+#       name: bridge
+  
