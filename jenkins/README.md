@@ -94,3 +94,11 @@ Jenkins 프로젝트 생성 시 특정 Slave를 선택 또는 리소스가 충�
 Slave에도 jvm이 있어야 가능하다.
 
 https://pompitzz.github.io/blog/Java/awsEc2InstallJDK11.html#jdk-%E1%84%89%E1%85%A5%E1%86%AF%E1%84%8E%E1%85%B5
+
+VPC -> VPN
+- 가상 네트워크 상에서 서로 같은 VPC를 사용할 경우 통신의 제약이 없음
+
+젠킨스 설치 : https://pkg.origin.jenkins.io/redhat-stable/
+젠킨스 플러그인
+- publish-over-ssh : https://plugins.jenkins.io/publish-over-ssh/
+- git parameter : https://plugins.jenkins.io/git-parameter/
