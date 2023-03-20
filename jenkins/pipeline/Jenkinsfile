@@ -1,4 +1,7 @@
 pipeline {
+    environment { 
+        ENV1 = 'env1'
+    }
     parameters {
         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
         text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
@@ -8,19 +11,32 @@ pipeline {
     }
     agent any
     stages {
-        stage('Build') {
+        stage('Using Parameters') {
             steps {
-                echo 'Building..'
+                echo "Hello ${params.PERSON}"
+                echo "Biography: ${params.BIOGRAPHY}"
+                echo "Toggle: ${params.TOGGLE}"
+                echo "Choice: ${params.CHOICE}"
+                echo "Password: ${params.PASSWORD}"
             }
         }
-        stage('Test') {
+        stage('Using Environment1') {
+            environment { 
+                ENV2 = 'env2'
+            }
             steps {
-                echo 'Testing..'
+                sh '''
+                echo "$ENV1";
+                echo "$ENV2";
+                '''
             }
         }
-        stage('Deploy') {
+        stage('Using Environment2') {
             steps {
-                echo 'Deploying....'
+                sh '''
+                echo "$ENV1";
+                echo "$ENV2";
+                '''
             }
         }
     }
