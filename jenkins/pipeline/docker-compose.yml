@@ -3,7 +3,7 @@ version: '3'
 services:
   jenkins-service: 
     image: 'jenkins/jenkins:lts-jdk11'
-    container_name: jenkins-service
+    container_name: jenkins-server
     ports:
       - 8082:8080
       - 50000:50000
