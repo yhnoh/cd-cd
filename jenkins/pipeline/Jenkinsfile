@@ -21,6 +21,8 @@ pipeline {
             }
         }
         stage('Using Environment1') {
+
+            // 해당 stage 내에서만 environment 사용가능
             environment { 
                 ENV2 = 'env2'
             }
